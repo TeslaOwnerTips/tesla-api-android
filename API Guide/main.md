@@ -1,4 +1,8 @@
-# Intro
+# Tesla API Guide
+* [Tesla API Introduction](#introduction)
+* [Authentication](#authentication)
+
+# Introduction
 The Tesla API has three main behaviors:
 * [Initialize](#initialize)
 * [State](state.md)
@@ -281,3 +285,30 @@ curl -X POST  -H "Authorization: Bearer <auth_token_goes_here>" -H "Content-Type
 ```
 
 In all our examples, we provide both the Linux/Mac and Windows versions to make your life easier.
+
+## Testing Before Using Tesla URLs
+Look at http://httpbin.org which is a usefull tool for web app developers. The site shows what gets received at the other end.
+```
+$ curl -X POST -H 'Content-Type: application/json' -d  "{\"grant_type\": \"refresh_token\", \"client_id\": \"ownerapi\", \"refresh_token\": \"eyJhb\", \"scope\": \"openid email offline_access\"}"  "http://192.168.1.11/post"
+{
+  "args": {}, 
+  "data": "{\"grant_type\": \"refresh_token\", \"client_id\": \"ownerapi\", \"refresh_token\": \"eyJhb\", \"scope\": \"openid email offline_access\"}", 
+  "files": {}, 
+  "form": {}, 
+  "headers": {
+    "Accept": "*/*", 
+    "Content-Length": "122", 
+    "Content-Type": "application/json", 
+    "Host": "192.168.1.11", 
+    "User-Agent": "curl/7.74.0"
+  }, 
+  "json": {
+    "client_id": "ownerapi", 
+    "grant_type": "refresh_token", 
+    "refresh_token": "eyJhb", 
+    "scope": "openid email offline_access"
+  }, 
+  "origin": "172.17.0.1", 
+  "url": "http://192.168.1.11/post"
+}
+```
