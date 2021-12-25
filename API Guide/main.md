@@ -1,6 +1,12 @@
 # Tesla API Guide
 * [Tesla API Introduction](#introduction)
 * [Authentication](#authentication)
+* [Vehicles](#vehicles)
+* [Wake Up](#wake-up)
+* [State](state.md)
+* [Actions](commands.md)
+* [Curl](#curl-commands)
+* [Testing Before Using Tesla URLs](#testing-before-using-tesla-urls)
 
 # Introduction
 The Tesla API has three main behaviors:
